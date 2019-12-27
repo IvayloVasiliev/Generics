@@ -8,23 +8,29 @@ namespace CustomTuple
         {
             string[] personInfo = Console.ReadLine().Split();
             string fullName = personInfo[0] + " " + personInfo[1];
-            string town = personInfo[2];
+            string adress = personInfo[2]; 
+            string town = personInfo[3];
 
             string[] beerInfo = Console.ReadLine().Split();
-            string name = beerInfo[0];
+            string personsName = beerInfo[0];
             int liters = int.Parse(beerInfo[1]);
+            bool isDrunk = beerInfo[2] == "drunk" ? true : false; 
 
-            string[] specialNumber = Console.ReadLine().Split();
-            int specialInt = int.Parse(specialNumber[0]);
-            double specialDouble = double.Parse(specialNumber[1]);
+            string[] bankInfo = Console.ReadLine().Split();
+            string name = bankInfo[0];
+            double accountBalance = double.Parse(bankInfo[1]);
+            string bankName = bankInfo[2];
 
-            SpecialTuple<string, string> personTuple = new SpecialTuple<string, string>(fullName, town);
-            SpecialTuple<string, int> beerTuple = new SpecialTuple<string, int>(name, liters);
-            SpecialTuple<int, double> specialTuple = new SpecialTuple<int, double>(specialInt, specialDouble);
+            SpecialTuple<string, string, string> personTuple = new SpecialTuple<string, string, string>
+                (fullName, adress, town);
+            SpecialTuple<string, int, bool> beerTuple = new SpecialTuple<string, int, bool>
+                (personsName, liters, isDrunk);
+            SpecialTuple<string, double, string> bankTuple = new SpecialTuple<string, double, string>
+                (name, accountBalance, bankName);
 
             Console.WriteLine(personTuple);
             Console.WriteLine(beerTuple);
-            Console.WriteLine(specialTuple);
+            Console.WriteLine(bankTuple);
         }
     }
 }
