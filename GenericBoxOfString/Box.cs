@@ -1,17 +1,36 @@
-﻿namespace GenericBoxOfString
+﻿using System.Collections.Generic;
+using System.Text;
+
+namespace GenericBoxOfString
 {
     public class Box<T>
     {
-        public Box(T item)
+        public Box(List<T> items)
         {
-            Item = item;
+            Items = items;
         }
 
-        public T Item { get; set; }
+        public List<T> Items { get; set; }
+
+        public void Swap(int index1, int index2)
+        {
+            T tempVAr = this.Items[index1];
+            this.Items[index1] = this.Items[index2];
+            this.Items[index2] = tempVAr;
+        }
 
         public override string ToString()
         {
-            return $"{this.Item.GetType().FullName}: {this.Item}";
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var item in Items)
+            {
+                sb.AppendLine($"{item.GetType().FullName}: {item}");
+            }
+
+            return sb.ToString().TrimEnd();
         }
+
+
     }
 }
