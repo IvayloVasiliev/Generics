@@ -8,15 +8,6 @@ namespace CustomList
         {
             ICustomList<string> softUniList = new SoftUniList<string>();
 
-            //•	Add < element > -Adds the given element to the end of the list
-            //•	Remove < index > -Removes the element at the given index
-            //•	Contains < element > -Prints if the list contains the given element(True or False)
-            //•	Swap<index> < index > -Swaps the elements at the given indexes
-            //•	Greater < element > -Counts the elements that are greater than the given element and prints their count
-            //•	Max - Prints the maximum element in the list
-            //•	Min - Prints the minimum element in the list
-            //•	Print - Prints all of the elements in the list, each on a separate line
-
             string input = Console.ReadLine();
 
             while (input != "END")
@@ -58,7 +49,10 @@ namespace CustomList
                         softUniList.Sort();
                         break;
                     case "Print":
-                        Console.WriteLine(softUniList);
+                        foreach (var item in softUniList)
+                        {
+                            Console.WriteLine(item);
+                        }
                         break;
                     
                     default:

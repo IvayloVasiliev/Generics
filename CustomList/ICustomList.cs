@@ -1,6 +1,7 @@
 ﻿namespace CustomList
 {
-    public interface ICustomList<T>
+    using System.Collections.Generic;
+    public interface ICustomList<T> : IEnumerable<T>
     {
         int Count { get; }
         void Add(T element);

@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 
 namespace CustomList
 {
-    public class SoftUniList<T> : ICustomList<T>
+    public class SoftUniList<T> : ICustomList<T>, IEnumerable<T>
         where T : IComparable<T>
     {
         private const int InitialCapacity = 4;
@@ -171,6 +173,19 @@ namespace CustomList
         public override string ToString()
         {
             return string.Join("\n", this.array.Take(this.Count));
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < this.Count; i++)
+            {
+                yield return this.array[i];
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator(); 
         }
     }
 }
