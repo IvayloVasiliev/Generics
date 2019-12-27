@@ -54,10 +54,13 @@ namespace CustomList
                     case "Min":
                         Console.WriteLine(softUniList.Min());
                         break;
+                    case "Sort":
+                        softUniList.Sort();
+                        break;
                     case "Print":
                         Console.WriteLine(softUniList);
                         break;
-
+                    
                     default:
                         break;
                 }

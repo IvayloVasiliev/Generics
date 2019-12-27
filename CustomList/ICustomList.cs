@@ -2,6 +2,7 @@
 {
     public interface ICustomList<T>
     {
+        int Count { get; }
         void Add(T element);
         T Remove(int index);
         bool Contains(T element);
@@ -10,6 +11,6 @@
         T Max();
         T Min();
 
-
+        void Sort();
     }
 }

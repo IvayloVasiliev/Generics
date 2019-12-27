@@ -140,6 +140,22 @@ namespace CustomList
 
         }
 
+        public void Sort()
+        {
+            for (int i = 0; i < this.Count; i++)
+            {
+                for (int j = i+1; j < this.Count; j++)
+                {
+                    if (this.array[i].CompareTo(this.array[j]) > 0)
+                    {
+                        T tempVar = this.array[i];
+                        this.array[i] = this.array[j];
+                        this.array[j] = tempVar;
+                    }
+                }
+            }
+        }
+
         private void Resize()
         {
             T[] tempArray = new T[this.array.Length * 2];
