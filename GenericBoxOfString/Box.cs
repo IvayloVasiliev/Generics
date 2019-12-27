@@ -25,7 +25,6 @@ namespace GenericBoxOfString
                     count++;
                 }
             }
-
             return count;
         }
 

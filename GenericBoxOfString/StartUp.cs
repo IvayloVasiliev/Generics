@@ -9,17 +9,17 @@ namespace GenericBoxOfString
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
-            List<string> messages = new List<string>();
+            List<double> messages = new List<double>();
 
             for (int i = 0; i < n; i++)
             {
-                string message = Console.ReadLine();
+                double message = double.Parse(Console.ReadLine());
                 messages.Add(message);
             }
 
-            string index = Console.ReadLine();
+            double index = double.Parse(Console.ReadLine());
 
-            Box<string> box = new Box<string>(messages);
+            Box<double> box = new Box<double>(messages);
             int result = box.GetGreaterThan(index);
             Console.WriteLine(result);
 
